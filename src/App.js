@@ -19,7 +19,6 @@ const App = () => {
     username: Yup.string()
       .required('Username is required')
       .matches('[A-HJ-NPR-Z0-9]{17}', 'Is not in correct format'),
-    acceptTerms: Yup.bool().oneOf([true], 'Accept Terms is required'),
   });
 
   const {
@@ -59,7 +58,7 @@ const App = () => {
                 {errors.username?.message}
               </Typography>
             </Grid>
-            <Grid item xs={12}>
+            {/* <Grid item xs={12}>
               <FormControlLabel
                 control={
                   <Controller
@@ -87,7 +86,7 @@ const App = () => {
                   ? '(' + errors.acceptTerms.message + ')'
                   : ''}
               </Typography>
-            </Grid>
+            </Grid> */}
           </Grid>
 
           <Box mt={3}>
