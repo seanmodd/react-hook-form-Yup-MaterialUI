@@ -18,8 +18,7 @@ const App = () => {
   const validationSchema = Yup.object().shape({
     username: Yup.string()
       .required('Username is required')
-      .min(6, 'Username must be at least 6 characters')
-      .max(20, 'Username must not exceed 20 characters'),
+      .matches('[A-HJ-NPR-Z0-9]{17}', 'Is not in correct format'),
     acceptTerms: Yup.bool().oneOf([true], 'Accept Terms is required'),
   });
 
